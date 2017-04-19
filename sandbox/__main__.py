@@ -1,5 +1,4 @@
 import os
-import subprocess
 import sys
 import tempfile
 
@@ -16,7 +15,7 @@ def main(arg = None):
             filepath = tempdir + '/sandbox-temp.' + ext
             if os.path.exists(filepath):
                 os.remove(filepath)
-            subprocess.call(['code', filepath], shell=True)
+            os.system('code ' + filepath)
         else:
             print "no file extension given"
             exit()
